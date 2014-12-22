@@ -1,25 +1,33 @@
-//
-//  ViewController.swift
-//  firstSwiftApp
-//
-//  Created by Samer Buna on 12/21/14.
-//  Copyright (c) 2014 Samer Buna. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPopoverControllerDelegate
+{
+
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var selectImage: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func selectAnImage(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+            println("Button capture")
+            var imag = UIImagePickerController()
+            imag.delegate = self
+            imag.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            //imag.mediaTypes = [kUTTypeImage];
+            imag.allowsEditing = false
+            self.presentViewController(imag, animated: true, completion: nil)
+        }
     }
 
-
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+        let selectedImage : UIImage = image
+        //var tempImage:UIImage = editingInfo[UIImagePickerControllerOriginalImage] as UIImage
+        mainImage.image=selectedImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
-
