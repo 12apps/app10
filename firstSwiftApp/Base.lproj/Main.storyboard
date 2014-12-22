@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9QT-JH-RL5">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="3W0-VQ-UHN"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPM-kG-jCk">
                                 <rect key="frame" x="245" y="119" width="110" height="30"/>
                                 <state key="normal" title="Select an image">
@@ -31,14 +25,20 @@
                                     <action selector="selectAnImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqH-yV-8Hb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9QT-JH-RL5">
+                                <rect key="frame" x="43" y="0.0" width="569" height="587"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="569" id="3W0-VQ-UHN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9QT-JH-RL5" firstAttribute="centerX" secondItem="yPM-kG-jCk" secondAttribute="centerX" id="3Ge-Lo-VQk"/>
+                            <constraint firstItem="9QT-JH-RL5" firstAttribute="centerX" secondItem="yPM-kG-jCk" secondAttribute="centerX" constant="27.5" id="3Ge-Lo-VQk"/>
                             <constraint firstItem="yPM-kG-jCk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AHL-2s-2DK"/>
                             <constraint firstItem="yPM-kG-jCk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="99" id="LN8-2y-P7s"/>
-                            <constraint firstItem="9QT-JH-RL5" firstAttribute="top" secondItem="yPM-kG-jCk" secondAttribute="bottom" constant="87" id="UNK-D4-gaZ"/>
-                            <constraint firstItem="9QT-JH-RL5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bLx-gZ-stZ"/>
+                            <constraint firstItem="9QT-JH-RL5" firstAttribute="top" secondItem="yPM-kG-jCk" secondAttribute="bottom" constant="-149" id="UNK-D4-gaZ"/>
+                            <constraint firstItem="9QT-JH-RL5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-6.5" id="bLx-gZ-stZ"/>
                         </constraints>
                     </view>
                     <connections>
